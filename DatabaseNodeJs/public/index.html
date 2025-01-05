@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <label for="FirstName">First Name:</label>
+            <input type="text" id="FirstName" name="FirstName" required>
+            <label for="LastName">Last Name:</label>
+            <input type="text" id="LastName" name="LastName" required>
+            <label for="Password">Password:</label>
+            <input type="password" id="Password" name="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p id="error-message" class="hidden">Invalid username or password.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

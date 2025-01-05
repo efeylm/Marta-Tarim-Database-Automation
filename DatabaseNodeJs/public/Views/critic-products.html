@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critical Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center">Critical Products List</h1>
+
+        <!-- Buton -->
+        <div class="text-center mb-4">
+            <button id="critical-products-button" class="btn btn-danger">Get Critical Products</button>
+        </div>
+
+        <!-- Listeyi göstermek için bir tablo -->
+        <table id="critical-products-table" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Type</th>
+                    <th>Quantity</th>
+                    <th>Min Stock Level</th>
+                    <th>Stock Status</th>
+                    <th>Product Specification</th>
+                    <th>Price</th>
+                    <th>Expiration Date</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById('critical-products-button').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/get-critical-products');
+                const data = await response.json();
+
+                if (response.ok) {
+                    const tableBody = document.getElementById('critical-products-table').querySelector('tbody');
+                    tableBody.innerHTML = '';
+
+                    data.data.forEach(product => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${product.ProductID}</td>
+                            <td>${product.ProductType}</td>
+                            <td>${product.Quantity}</td>
+                            <td>${product.MinStockLevel}</td>
+                            <td>${product.StockStatus}</td>
+                            <td>${product.ProductSpecification}</td>
+                            <td>${product.Price}</td>
+                            <td>${product.ExpirationDate || 'N/A'}</td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                } else {
+                    alert(data.message);
+                }
+            } catch (error) {
+                alert('An error occurred while fetching critical products.');
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+
+</html>

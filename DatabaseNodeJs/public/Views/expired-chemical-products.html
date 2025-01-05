@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expired Chemical Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center">Expired Chemical Products List</h1>
+
+        <!-- Buton -->
+        <div class="text-center mb-4">
+            <button id="expired-chemical-products-button" class="btn btn-danger">Get Expired Chemical Products</button>
+        </div>
+
+        <!-- Listeyi göstermek için bir tablo -->
+        <table id="expired-chemical-products-table" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Good ID</th>
+                    <th>Product ID</th>
+                    <th>Price</th>
+                    <th>Product Type</th>
+                    <th>Expiration Date</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dinamik olarak veriler buraya eklenecek -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById('expired-chemical-products-button').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/get-expired-chemical-products');
+                const data = await response.json();
+
+                if (response.ok) {
+                    const tableBody = document.getElementById('expired-chemical-products-table').querySelector('tbody');
+                    tableBody.innerHTML = ''; // Mevcut tabloyu temizle
+
+                    data.data.forEach(product => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${product.GoodID}</td>
+                            <td>${product.ProductID}</td>
+                            <td>${product.Price}</td>
+                            <td>${product.ProductType}</td>
+                            <td>${product.ExpirationDate}</td>
+                            <td>${product.Category}</td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                } else {
+                    alert(data.message);
+                }
+            } catch (error) {
+                alert('An error occurred while fetching expired chemical products.');
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+
+</html>

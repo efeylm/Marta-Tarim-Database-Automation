@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to the Inventory Management System</h1>
+
+        <!-- 3 Grup Butonlar -->
+        <div class="button-group-container">
+            <div class="button-group">
+                <button id="inventory-button">Inventory</button>
+            </div>
+            <div class="button-group">
+                <button id="plants-button">Plants</button>
+                <button id="chemical-goods-button">Chemical Goods</button>
+                <button id="tools-button">Tools</button>
+            </div>
+            <div class="button-group">
+                <button id="add-seed-button">Add Seed</button>
+                <button id="add-seedling-button">Add Seedling</button>
+                <button id="add-potted-button">Add Potted</button>
+            </div>
+        </div>
+
+        <!-- Diğer Buton Grupları -->
+        <div class="button-group-container">
+            <div class="button-group">
+                <button id="add-fertilizer-button">Add Fertilizer</button>
+                <button id="add-fungicide-button">Add Fungicide</button>
+            </div>
+            <div class="button-group">
+                <button id="add-herbicide-button">Add Herbicide</button>
+                <button id="add-insecticide-button">Add Insecticide</button>
+            </div>
+            <div class="button-group">
+                <button id="add-sale-button">Add Sale</button>
+                <button id="add-tool-button">Add Tool</button>
+            </div>
+        </div>
+
+        <!-- Diğer Buton Grupları -->
+        <div class="button-group-container">
+            <div class="button-group">
+                <button id="add-customer-button">Add Customer</button>
+            </div>
+            <div class="button-group">
+                <button id="add-visit-button">Add Visit</button>
+            </div>
+            <div class="button-group">
+                <button id="add-employee-button">Add Employee</button>
+            </div>
+            <div class="button-group">
+                <button id="delete-product-button">Delete Product</button>
+                <button id="delete-employee-button">Delete Employee</button>
+            </div>
+            <div class="button-group">
+                <button id="critic-products-button">Critic Products</button>
+                <button id="expired-chemical-products-button">Expired Chemical Products</button>
+                <button id="customers-with-debt-button">Customers With Debt</button>
+                <button id="customer-performance-button">Customer Performance</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('inventory-button').addEventListener('click', () => {
+            window.location.href = '/inventory.html';
+        });
+        document.getElementById('plants-button').addEventListener('click', () => {
+            window.location.href = '/getSelectedProduct/plants.html';
+        });
+        document.getElementById('chemical-goods-button').addEventListener('click', () => {
+            window.location.href = '/getSelectedProduct/chemical-goods.html';
+        });
+        document.getElementById('tools-button').addEventListener('click', () => {
+            window.location.href = '/getSelectedProduct/tools.html';
+        });
+        document.getElementById('add-seed-button').addEventListener('click', () => {
+            window.location.href = '/addplants/add-seed.html';
+        });
+        document.getElementById('add-seedling-button').addEventListener('click', () => {
+            window.location.href = '/addplants/add-seedling.html';
+        });
+        document.getElementById('add-potted-button').addEventListener('click', () => {
+            window.location.href = '/addplants/add-potted.html';
+        });
+        document.getElementById('add-fertilizer-button').addEventListener('click', () => {
+            window.location.href = '/addchemicalgood/add-fertilizer.html';
+        });
+        document.getElementById('add-fungicide-button').addEventListener('click', () => {
+            window.location.href = '/addchemicalgood/add-fungicide.html';
+        });
+        document.getElementById('add-herbicide-button').addEventListener('click', () => {
+            window.location.href = '/addchemicalgood/add-herbicide.html';
+        });
+        document.getElementById('add-insecticide-button').addEventListener('click', () => {
+            window.location.href = '/addchemicalgood/add-insecticide.html';
+        });
+        document.getElementById('add-sale-button').addEventListener('click', () => {
+            window.location.href = '/addnewsale/add-new-sale.html';
+        });
+        document.getElementById('add-tool-button').addEventListener('click', () => {
+            window.location.href = '/addtool/add-tool.html';
+        });
+        document.getElementById('add-customer-button').addEventListener('click', () => {
+            window.location.href = '/addcustomer/add-customer.html';
+        });
+        document.getElementById('add-visit-button').addEventListener('click', () => {
+            window.location.href = '/addnewvisit/add-new-visit.html';
+        });
+        document.getElementById('add-employee-button').addEventListener('click', () => {
+            window.location.href = '/addnewemployee/add-new-employee.html';
+        });
+        document.getElementById('delete-product-button').addEventListener('click', () => {
+            window.location.href = '/deleteproduct/delete-product.html';
+        });
+        document.getElementById('delete-employee-button').addEventListener('click', () => {
+            window.location.href = '/deleteemployee/delete-employee.html';
+        });
+        document.getElementById('critic-products-button').addEventListener('click', () => {
+            window.location.href = '/Views/critic-products.html';
+        });
+        document.getElementById('expired-chemical-products-button').addEventListener('click', () => {
+            window.location.href = '/Views/expired-chemical-products.html';
+        });
+        document.getElementById('customers-with-debt-button').addEventListener('click', () => {
+            window.location.href = '/Views/customers-with-debt.html';
+        });
+        document.getElementById('customer-performance-button').addEventListener('click', () => {
+            window.location.href = '/Views/customer-performance.html';
+        });
+    </script>
+</body>
+
+</html>
