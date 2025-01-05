@@ -19,3 +19,8 @@
 8. If you want to view the sales, you can do it by clicking the sales button
 9. If you want to view the visits, you can do it by clicking the visits button
 10. If you want to view the employees, you can do it by clicking the employees button
+
+## Developers 
+Hikmet Topak - https://github.com/Hikmettpk
+Efe Yalım - https://github.com/efeylm
+
